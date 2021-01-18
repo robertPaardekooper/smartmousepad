@@ -3,15 +3,17 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
 
-  return view('welcome');
-
-});
-Route::get('check-queue', function(){
-
-  Mail::to('paardekooper.robert@gmail.com')->send(new TestMail());
-
-  return 'Working';
-
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
 });
