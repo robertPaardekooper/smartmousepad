@@ -14,8 +14,10 @@ class CreateEventTypeTable extends Migration
     public function up()
     {
         Schema::create('event_type', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->integer('event_id')->unsigned();
+            $table->foreign("event_id")->references("event_id")->on("event");
+            $table->string("event_name");
+            $table->string("event_description");
         });
     }
 
@@ -26,6 +28,9 @@ class CreateEventTypeTable extends Migration
      */
     public function down()
     {
+        Schema::table('event_type', function($table){
+          $table->dropForeign('event_type_event_id_foreign');
+        });
         Schema::dropIfExists('event_type');
     }
 }

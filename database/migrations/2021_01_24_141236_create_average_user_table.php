@@ -14,8 +14,10 @@ class CreateAverageUserTable extends Migration
     public function up()
     {
         Schema::create('average_user', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->integer('user_id')->unsigned();
+            $table->foreign("user_id")->references("user_id")->on("user");
+            $table->datetime("datetime")->nullable();
+            $table->double("user_average");
         });
     }
 
@@ -26,6 +28,9 @@ class CreateAverageUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('average_user');
+      Schema::table('average_user', function($table){
+        $table->dropForeign('average_user_user_id_foreign');
+      });
+      Schema::dropIfExists('average_user');
     }
 }

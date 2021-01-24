@@ -14,8 +14,10 @@ class CreateAverageGroupTable extends Migration
     public function up()
     {
         Schema::create('average_group', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->integer('group_id')->unsigned();
+            $table->foreign('group_id')->references("group_id")->on("group");
+            $table->datetime("datetime")->nullable();
+            $table->double("group_average");
         });
     }
 
@@ -26,6 +28,9 @@ class CreateAverageGroupTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('average_group');
+      Schema::table('average_group', function($table){
+        $table->dropForeign('average_group_group_id_foreign');
+      });
+      Schema::dropIfExists('average_group');
     }
 }
