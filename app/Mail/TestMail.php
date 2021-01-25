@@ -28,6 +28,6 @@ class TestMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->view('welcome Deploy');
+        return $this->view('welcome');
     }
 }

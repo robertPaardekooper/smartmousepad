@@ -15,6 +15,6 @@ Route::get('check-queue', function(){
 
   Mail::to('paardekooper.robert@gmail.com')->send(new TestMail());
 
-  return 'Working deploy';
+  return 'Working';
 
 });
