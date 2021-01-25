@@ -13,6 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+      $this->call(GroupTableSeeder::class);
+      $this->call(EventTableSeeder::class);
+      $this->call(UserTableSeeder::class);
+      $this->call(AverageEventUserTableSeeder::class);
+      $this->call(AverageUserTableTableSeeder::class);
+      $this->call(AverageGroupTableSeeder::class);
+      $this->call(UserEventTableSeeder::class);
+      $this->call(EventTypeTableSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

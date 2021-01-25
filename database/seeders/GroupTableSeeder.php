@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use DB;
 
 class GroupTableSeeder extends Seeder
 {
@@ -13,6 +14,10 @@ class GroupTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+      DB::table('group')->insert([
+        "group_id" => 6,
+        "group_name" => "Groep 6",
+      ]);
+
     }
 }
