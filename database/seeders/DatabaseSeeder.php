@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
       $this->call(EventTableSeeder::class);
       $this->call(UserTableSeeder::class);
       $this->call(AverageEventUserTableSeeder::class);
-      $this->call(AverageUserTableTableSeeder::class);
+      $this->call(AverageUserTableSeeder::class);
       $this->call(AverageGroupTableSeeder::class);
       $this->call(UserEventTableSeeder::class);
       $this->call(EventTypeTableSeeder::class);
