@@ -9,11 +9,11 @@ class User extends Model
     protected $table = "user";
 
     public function getAverageUser(){
-      return $this->hasOne("App\Models\AverageUser", "user_id", "user_id");
+      return $this->hasMany("App\Models\AverageUser", "user_id", "user_id");
     }
 
     public function getAverageGroup(){
-      return $this->hasOne("App\Models\AverageGroup", "group_id", "group_id");
+      return $this->hasMany("App\Models\AverageGroup", "group_id", "group_id");
     }
 
     public function getAverageEventUser(){
