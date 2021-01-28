@@ -19,4 +19,8 @@ class User extends Model
     public function getAverageUser(){
       return $this->hasOne("App\Models\AverageUser", "user_id", "user_id");
     }
+
+    public function getScore(){
+      return $this->hasOne("App\Models\UserEvent", "user_id", "user_id");
+    }
 }

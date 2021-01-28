@@ -12,6 +12,7 @@ class UserController extends Controller
       $average_event_user = $user->getAverageEventUser;
       $average_group = $user->getAverageGroup;
       $average_user = $user->getAverageUser;
+      $user_event = $user->getScore;
       return $user;
     }
 }
