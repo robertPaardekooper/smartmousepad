@@ -17,16 +17,19 @@ class UserEventTableSeeder extends Seeder
       DB::table('user_event')->insert([
           "user_id" => 1,
           "event_id" => 2,
+          "event_score" => 2,
           "datetime" => "2017-06-07 09:39:31",
       ]);
       DB::table('user_event')->insert([
           "user_id" => 2,
           "event_id" => 1,
+          "event_score" => 3,
           "datetime" => "2017-06-07 09:39:31",
       ]);
       DB::table('user_event')->insert([
           "user_id" => 3,
           "event_id" => 3,
+          "event_score" => 1,
           "datetime" => "2017-06-07 09:39:31",
       ]);
     }
