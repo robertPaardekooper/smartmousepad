@@ -18,7 +18,7 @@ class CreateUserEventTable extends Migration
           $table->foreign("user_id")->references("user_id")->on("user");
           $table->integer('event_id')->unsigned();
           $table->foreign("event_id")->references("event_id")->on("event");
-          $table->integer('event_score');
+          $table->double('event_score');
           $table->datetime("datetime")->nullable();
         });
     }
