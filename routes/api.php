@@ -19,3 +19,5 @@ use App\Http\Controllers\GroupController;
 Route::get('/user/{user_id}','App\Http\Controllers\UserController@show');
 Route::get('/event/{event_id}','App\Http\Controllers\EventController@show');
 Route::get('/group/{group_id}','App\Http\Controllers\GroupController@show');
+
+Route::post('user', 'App\Http\Controller\UserController@store');
