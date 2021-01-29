@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\UserEventController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +22,4 @@ Route::get('/event/{event_id}','App\Http\Controllers\EventController@show');
 Route::get('/group/{group_id}','App\Http\Controllers\GroupController@show');
 
 Route::post('user', 'App\Http\Controllers\UserController@store');
+Route::post('user_event', 'UserEventController@store');
