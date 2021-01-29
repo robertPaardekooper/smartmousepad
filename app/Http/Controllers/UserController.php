@@ -8,9 +8,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function store(Request $request){
-      $user = User::create($request->all());
-
-      return response()->json($article, 201);
+      return Article::create($request->all);
     }
 
     public function show($user_id){

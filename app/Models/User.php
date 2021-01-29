@@ -21,6 +21,6 @@ class User extends Model
     }
 
     public function getScore(){
-      return $this->hasOne("App\Models\UserEvent", "user_id", "user_id");
+      return $this->hasMany("App\Models\UserEvent", "user_id", "user_id");
     }
 }
