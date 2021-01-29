@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -8,7 +8,9 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function store(Request $request){
-      return User::create($request->all);
+      $article = User::create($request->all());
+
+      return response()->json($user, 201);
     }
 
     public function show($user_id){
