@@ -7,6 +7,12 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    public function store(Request $request){
+      $user = User::create($request->all());
+
+      return response()->json($article, 201);
+    }
+
     public function show($user_id){
       $user = User::where('user_id','=',$user_id)->first();
       $average_event_user = $user->getAverageEventUser;
