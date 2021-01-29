@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     protected $table = "user";
+    protected $fillable = [
+      'user_id',
+      'group_id',
+      'first_name',
+      'last_name',
+      'member_nr'
+    ];
 
     public function getAverageEventUser(){
       return $this->hasOne("App\Models\AverageEventUser", "user_id", "user_id");
