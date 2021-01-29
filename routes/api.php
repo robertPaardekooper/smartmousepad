@@ -22,4 +22,4 @@ Route::get('/event/{event_id}','App\Http\Controllers\EventController@show');
 Route::get('/group/{group_id}','App\Http\Controllers\GroupController@show');
 
 Route::post('user', 'App\Http\Controllers\UserController@store');
-Route::post('user_event', 'UserEventController@store');
+Route::post('user_event', 'App\Http\Controllers\UserEventController@store');
